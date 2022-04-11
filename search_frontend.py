@@ -63,31 +63,6 @@ def search():
     # END SOLUTION
     return jsonify(res)
 
-@app.route("/search_body")
-def search_body():
-    ''' Returns up to a 100 search results for the query using TFIDF AND COSINE
-        SIMILARITY OF THE BODY OF ARTICLES ONLY. DO NOT use stemming. DO USE the 
-        staff-provided tokenizer from Assignment 3 (GCP part) to do the 
-        tokenization and remove stopwords. 
-
-        To issue a query navigate to a URL like:
-         http://YOUR_SERVER_DOMAIN/search_body?query=hello+world
-        where YOUR_SERVER_DOMAIN is something like XXXX-XX-XX-XX-XX.ngrok.io
-        if you're using ngrok on Colab or your external IP on GCP.
-    Returns:
-    --------
-        list of up to 100 search results, ordered from best to worst where each 
-        element is a tuple (wiki_id, title).
-    '''
-    res = []
-    query = request.args.get('query', '')
-    if len(query) == 0:
-      return jsonify(res)
-    # BEGIN SOLUTION
-
-    # END SOLUTION
-    return jsonify(res)
-
 @app.route("/search_title")
 def search_title():
     ''' Returns ALL (not just top 100) search results that contain A QUERY WORD 
